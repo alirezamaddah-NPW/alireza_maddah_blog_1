@@ -9,7 +9,9 @@ title: "محصولات"
   <div class="product-grid">
     {% for product in site.data.products %}
     <div class="product-item">
-      <img class="product-img" src="{{ site.baseurl }}/assets/images/{{ product.image }}" alt="{{ product.alt }}" tabindex="0">
+      <div class="img-wrapper">
+        <img class="product-img" src="{{ site.baseurl }}/assets/images/{{ product.image }}" alt="{{ product.alt }}" tabindex="0">
+      </div>
       <p class="caption">محصول {{ forloop.index }}: {{ product.description }}</p>
     </div>
     {% endfor %}
@@ -19,7 +21,9 @@ title: "محصولات"
 <!-- Popup Modal for Image Preview -->
 <div id="image-modal" class="image-modal" tabindex="-1" aria-hidden="true">
   <div class="modal-content">
-    <button class="close-modal" aria-label="بستن">&times;</button>
+    <button class="close-modal" aria-label="بستن">
+      <span aria-hidden="true">&times;</span>
+    </button>
     <img id="modal-img" src="" alt="">
   </div>
 </div>
@@ -42,20 +46,32 @@ title: "محصولات"
   text-align: center;
 }
 
-.product-item img {
+.img-wrapper {
   width: 100%;
-  max-width: 400px;
-  height: auto;
-  object-fit: contain;
+  max-width: 350px;
+  aspect-ratio: 1/1; /* Square images */
   margin: 0 auto;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: zoom-in;
-  transition: box-shadow .2s;
+  background: #f9f9f9;
+  border: 2.5px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.product-item img:focus {
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fill and crop to fit container */
+  transition: box-shadow .2s;
+  cursor: zoom-in;
+  border-radius: 10px;
+  display: block;
+  background: #fff;
+}
+.product-img:focus {
   outline: 2px solid #0078d7;
   box-shadow: 0 0 0 4px #0078d755;
 }
@@ -108,25 +124,35 @@ title: "محصولات"
   display: block;
 }
 
-/* Close button inside modal-content, top-right of image */
 .close-modal {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 12px;
+  right: 12px;
   background: #fff;
   color: #222;
   border: none;
   border-radius: 50%;
-  width: 36px; height: 36px;
-  font-size: 2rem;
+  width: 44px;
+  height: 44px;
+  font-size: 2.2rem;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.19);
   z-index: 2;
   transition: background .1s;
   display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 1;
+  font-family: inherit;
   padding: 0;
+}
+.close-modal span {
+  display: block;
+  line-height: 1;
+  width: 100%;
+  text-align: center;
+  font-weight: 400;
+  font-family: inherit;
 }
 .close-modal:hover,
 .close-modal:focus {
@@ -151,6 +177,10 @@ title: "محصولات"
   #modal-img {
     max-width: 96vw;
     max-height: 65vh;
+  }
+  .img-wrapper {
+    max-width: 96vw;
+    aspect-ratio: 1/1;
   }
 }
 </style>
