@@ -1,0 +1,75 @@
+- image: "product_1.jpg"
+  description: "جانانی"
+  alt: "محصول ۱"
+
+- image: "product_2.jpg"
+  description: "زیرگلدان گرد"
+  alt: "محصول ۲"
+
+- image: "product_3.jpg"
+  description: "زیرگلدان گرد رنگی"
+  alt: "محصول ۳"
+
+- image: "product_4.jpg"
+  description: "گلدان مستطیل "
+  alt: "محصول ۴"
+
+- image: "product_5.jpg"
+  description: "گلدان چهارگوش"
+  alt: "محصول ۵"
+
+- image: "product_6.jpg"
+  description: "گلدان چهارگوش رنگی"
+  alt: "محصول ۶"
+
+- image: "product_7.jpg"
+  description: "زیرگلدان چهارگوش رنگی"
+  alt: "محصول ۷"
+
+- image: "product_8.jpg"
+  description: "گلدان چهارگوش رنگی"
+  alt: "محصول ۸"
+
+- image: "product_9.jpg"
+  description: "گلدان گرد رنگی"
+  alt: "محصول ۹"
+
+- image: "product_10.jpg"
+  description: "گلدان کهکشان رنگی"
+  alt: "محصول ۱۰"
+
+- image: "product_11.jpg"
+  description: "گلدان لاله "
+  alt: "محصول ۱۱"
+
+- image: "product_12.jpg"
+  description: " گلدان گرد قهوه‌ای"
+  alt: "محصول ۱۲"
+
+- image: "product_13.jpg"
+  description: "گلدان لاله رنگی"
+  alt: "محصول ۱۳"
+
+- image: "product_14.jpg"
+  description: "زیر لاله با زیری"
+  alt: "محصول ۱۴"
+
+- image: "product_15.jpg"
+  description: "گلدان چهارگوش با زیری"
+  alt: "محصول ۱۵"
+
+- image: "product_16.jpg"
+  description: "گلدان کهکشان با زیری"
+  alt: "محصول ۱۶"
+
+- image: "product_17.jpg"
+  description: "جانانی کوچک و متوسط"
+  alt: "محصول ۱۷"
+
+- image: "product_18.jpg"
+  description: "گلدان گرد "
+  alt: "محصول ۱۸"
+
+- image: "product_19.jpg"
+  description: "ظرف غذا زنبور عسل "
+  alt: "محصول ۱۹"
