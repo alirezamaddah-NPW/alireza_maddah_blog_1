@@ -17,14 +17,19 @@ title: وبسایت تولیدی مداح
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   
+    واحد تولیدی ما با بیش از ۲۰ سال تجربه، در تولید انواع محصولات پلاستیکی پیشرو است. ما به‌ویژه در زمینه تولید انواع گلدان‌های باکیفیت برای گل‌ها تخصص داریم، از جمله گلدان‌های گرد، چهارگوش، مستطیلی و دیگر طرح‌های متنوع. 
+    <br>
+    هدف ما ایجاد محصولاتی است که علاوه بر زیبایی، دوام و عملکرد عالی را برای شما به ارمغان بیاورند. با انتخاب محصولات ما، کیفیتی برتر و قیمتی رقابتی را تجربه کنید!
+
+baseurl: "/alireza_maddah_blog_1"
 twitter_username: username
 github_username: username
 minimal_mistakes_skin: default
 search: true
 
-baseurl: "/alireza_maddah_blog_1"
-
 # Build settings
+locale: "fa-IR"
+rtl: true
 markdown: kramdown
 remote_theme: "mmistakes/minimal-mistakes@4.27.1"
 # Outputting
