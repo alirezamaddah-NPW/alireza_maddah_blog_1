@@ -5,6 +5,9 @@
 layout: home
 author_profile: true
 ---
+{% for file in site.static_files %}
+    {{ file.path }} <br>
+{% endfor %}
 
 {% for file in site.static_files %}
     {% if file.image %}
