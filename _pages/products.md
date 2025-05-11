@@ -1,5 +1,11 @@
+---
+permalink: /products/
+title: "محصولات"
+---
+
 <div class="products" dir="rtl">
   <p>به صفحه محصولات ما خوش آمدید. در اینجا می‌توانید ۱۹ محصول برتر ما را مشاهده کنید. هر محصول با توضیحات مختصر ارائه شده است.</p>
+  
   <div class="product-grid">
     {% for product in site.data.products %}
     <div class="product-item">
@@ -42,7 +48,9 @@
 
 .img-wrapper {
   width: 100%;
-  aspect-ratio: 1/1; /* Perfect square */
+  max-width: 350px;
+  aspect-ratio: 1/1; /* Square images */
+  margin: 0 auto;
   background: #f9f9f9;
   border: 2.5px solid #ddd;
   border-radius: 10px;
@@ -51,22 +59,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Fixed height for uniformity, optional */
-  max-width: 350px;
-  margin: 0 auto;
 }
 
 .product-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* <-- Show full image, don't crop */
   transition: box-shadow .2s;
   cursor: zoom-in;
   border-radius: 10px;
   display: block;
   background: #fff;
 }
-
 .product-img:focus {
   outline: 2px solid #0078d7;
   box-shadow: 0 0 0 4px #0078d755;
@@ -91,19 +95,17 @@
   align-items: center;
   transition: opacity 0.2s;
 }
-
 .image-modal.active {
   display: flex;
   animation: fadeIn .2s;
 }
-
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 .image-modal .modal-content {
   position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end; /* Close button to top right */
+  justify-content: center;
+  align-items: center;
   background: transparent;
   border-radius: 12px;
   padding: 0;
@@ -120,13 +122,12 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   object-fit: contain;
   display: block;
-  margin-top: 0; /* No margin needed */
 }
 
 .close-modal {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 12px;
+  right: 12px;
   background: #fff;
   color: #222;
   border: none;
@@ -145,7 +146,6 @@
   font-family: inherit;
   padding: 0;
 }
-
 .close-modal span {
   display: block;
   line-height: 1;
@@ -154,7 +154,6 @@
   font-weight: 400;
   font-family: inherit;
 }
-
 .close-modal:hover,
 .close-modal:focus {
   background: #f2f2f2;
@@ -167,7 +166,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (max-width: 600px) {
   .product-grid {
     grid-template-columns: 1fr;
