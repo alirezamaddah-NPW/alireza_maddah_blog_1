@@ -13,13 +13,13 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+
 title: وبسایت تولیدی مداح
-email:
-description: >- # this means to ignore newlines until "baseurl:"
-  
+email: maddah.plastic.production@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"  
     واحد تولیدی ما با بیش از ۲۰ سال تجربه، در تولید انواع محصولات پلاستیکی پیشرو است. ما به‌ویژه در زمینه تولید انواع گلدان‌های باکیفیت برای گل‌ها تخصص داریم، از جمله گلدان‌های گرد، چهارگوش، مستطیلی و دیگر طرح‌های متنوع. 
     <br>
-    هدف ما ایجاد محصولاتی است که علاوه بر زیبایی، دوام و عملکرد عالی را برای شما به ارمغان بیاورند. با انتخاب محصولات ما، کیفیتی برتر و قیمتی رقابتی را تجربه کنید!
+    هدف ما ایجاد محصولاتی است که علاوه بر زیبایی، دوام و عملکرد عالی را برای شما به ارمغان بیاورند. با انتخاب محصولات ما، کیفیتی برتر و قیمتی رقابتی را تجربه کنید
 
 baseurl: "/alireza_maddah_blog_1"
 twitter_username: username
@@ -64,7 +64,7 @@ plugins:
 
 author:
   name   : "امید مداح"
-  avatar : "/assets/images/bio-photo_1.jpg"
+  avatar : "/assets/images/bio-photo_2.jpg"
   bio    : "مدیر بخش تولید و فروش"
   links:
     - label: "شماره همراه ۱"
