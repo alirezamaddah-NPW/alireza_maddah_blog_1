@@ -63,22 +63,25 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "First Lastname"
-  avatar : "{{ site.baseurl }}/assets/images/logo.png"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  name   : "امید مداح"
+  avatar : "/assets/images/bio-photo_1.jpg"
+  bio    : "مدیر بخش تولید و فروش"
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+    - label: "شماره همراه ۱"
+      icon: "fas fa-fw fa-phone"
+      url: "tel:+989125325839"
+    - label: "شماره همراه ۲"
+      icon: "fas fa-fw fa-phone"
+      url: "tel:+989129473984"
+    - label: "واتساپ"
+      icon: "fab fa-fw fa-whatsapp"
+      url: "https://wa.me/989125325839"
+    - label: "تلگرام"
+      icon: "fab fa-fw fa-telegram"
+      url: "https://t.me/+989125325839"
+    - label: "ایمیل"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:maddah.plastic.production@gmail.com"
 
 footer:
   links:
