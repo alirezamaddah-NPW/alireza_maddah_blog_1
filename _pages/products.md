@@ -1,82 +1,221 @@
+---
+permalink: /products/
+title: "محصولات"
+---
+
+<div class="products" dir="rtl">
+  <p>به صفحه محصولات ما خوش آمدید. در اینجا می‌توانید ۱۹ محصول برتر ما را مشاهده کنید. هر محصول با توضیحات مختصر ارائه شده است.</p>
+  
+  <div class="product-grid">
+    {% for product in site.data.products %}
+    <div class="product-item">
+      <img class="product-img" src="{{ site.baseurl }}/assets/images/{{ product.image }}" alt="{{ product.alt }}" tabindex="0">
+      <p class="caption">محصول {{ forloop.index }}: {{ product.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Popup Modal for Image Preview -->
+<div id="image-modal" class="image-modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-modal" aria-label="بستن">&times;</button>
+    <img id="modal-img" src="" alt="">
+  </div>
+</div>
+
 <style>
-  /* Modal styles */
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
-    display: flex; /* Flexbox for centering */
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
-  }
+.products {
+  text-align: right;
+  margin: 2rem auto;
+  font-family: Arial, sans-serif;
+}
 
-  .modal-content-wrapper {
-    position: relative;
-    max-width: 90%; /* Limit the size of the popup */
-    max-height: 90%; /* Ensure the image fits within the viewport */
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-  }
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.0rem;
+  margin-top: 2rem;
+}
 
+.product-item {
+  text-align: center;
+}
+
+.product-item img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: zoom-in;
+  transition: box-shadow .2s;
+}
+.product-item img:focus {
+  outline: 2px solid #0078d7;
+  box-shadow: 0 0 0 4px #0078d755;
+}
+
+.caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+/* Modal Styles */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.2s;
+}
+.image-modal.active {
+  display: flex;
+  animation: fadeIn .2s;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.image-modal .modal-content {
+  position: relative;
+  background: transparent;
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0 6px 24px rgba(0,0,0,.3);
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#modal-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  object-fit: contain;
+}
+
+.close-modal {
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  background: #fff;
+  color: #222;
+  border: none;
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 2;
+  transition: background .1s;
+}
+.close-modal:hover,
+.close-modal:focus {
+  background: #f2f2f2;
+  outline: 2px solid #0078d7;
+}
+
+/* Responsive grid for mobile/tablet */
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
   .modal-content {
-    display: block;
-    width: 100%;
-    height: auto;
+    max-width: 98vw;
+    max-height: 80vh;
   }
+}
 
-  #modalCaption {
-    margin: 15px auto;
-    text-align: center;
-    color: #333;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #000;
-    font-size: 24px;
-    font-weight: bold;
-    background: #fff;
-    border: 2px solid #ddd;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-
-  .close:hover {
-    background-color: #f1f1f1;
-  }
 </style>
 
 <script>
-  // Function to open the modal
-  function openModal(imageSrc, captionText) {
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImage");
-    const modalCaption = document.getElementById("modalCaption");
+// Convert English numbers to Persian
+function toPersianNumber(num) {
+  const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+  return num.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+}
 
-    modal.style.display = "flex"; // Ensure the modal uses flexbox for centering
-    modalImg.src = imageSrc;
-    modalCaption.textContent = captionText;
+// Convert all captions with numbers
+document.addEventListener("DOMContentLoaded", function () {
+  const captions = document.querySelectorAll(".caption");
+  captions.forEach((caption) => {
+    caption.innerHTML = caption.innerHTML.replace(/\d+/g, (number) => toPersianNumber(number));
+  });
+
+  // Popup Image Modal Logic
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-img');
+  const closeBtn = document.querySelector('.close-modal');
+  let lastFocusedElement = null;
+
+  function openModal(src, alt) {
+    modalImg.src = src;
+    modalImg.alt = alt;
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    lastFocusedElement = document.activeElement;
+    closeBtn.focus();
+    // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
   }
 
-  // Function to close the modal
   function closeModal() {
-    const modal = document.getElementById("imageModal");
-    modal.style.display = "none";
+    modal.classList.remove('active');
+    modalImg.src = '';
+    modalImg.alt = '';
+    modal.setAttribute('aria-hidden', 'true');
+    // Restore background scrolling
+    document.body.style.overflow = '';
+    // Restore focus
+    if (lastFocusedElement) lastFocusedElement.focus();
   }
+
+  // Click/tap on image opens modal
+  document.querySelectorAll('.product-img').forEach(img => {
+    img.addEventListener('click', function () {
+      openModal(this.src, this.alt);
+    });
+    // Keyboard accessibility: Enter/Space
+    img.addEventListener('keydown', function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openModal(this.src, this.alt);
+      }
+    });
+  });
+
+  // Close modal by button
+  closeBtn.addEventListener('click', closeModal);
+
+  // Close modal by clicking outside
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) closeModal();
+  });
+
+  // Close modal with Escape key
+  window.addEventListener('keydown', function (e) {
+    if (modal.classList.contains('active') && (e.key === "Escape" || e.key === "Esc")) {
+      closeModal();
+    }
+  });
+});
+
 </script>
