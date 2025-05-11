@@ -13,3 +13,5 @@ main:
     url: /mission/
   - title: "درباره ما"
     url: /about/
+  - title: "ارتباط با ما"
+    url: /contact/
