@@ -35,10 +35,12 @@ title: "محصولات"
   }
 
   .product-item img {
-    width: 400px; /* Fixed width for uniformity */
-    height: 300px; /* Fixed height for uniformity */
+    width: 100%; /* Ensure the image takes full width of the container */
+    max-width: 400px; /* Set a maximum width to avoid overly large images */
+    height: auto; /* Maintain aspect ratio */
     object-fit: contain; /* Ensures the entire image is visible without cropping */
-    background-color: #f9f9f9; /* Optional: Adds a subtle background to fill empty space */
+    margin: 0 auto; /* Center the image horizontally */
+    background-color: #f9f9f9; /* Optional: Adds a subtle background */
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
