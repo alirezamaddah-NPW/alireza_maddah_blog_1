@@ -22,7 +22,7 @@ description: >-
 baseurl: "/alireza_maddah_blog_1"
 twitter_username: username
 github_username: username
-minimal_mistakes_skin: air
+minimal_mistakes_skin: contrast
 search: true
 
 # Build settings
