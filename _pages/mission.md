@@ -6,10 +6,10 @@ permalink: /mission/
 
   <!-- Logo Section -->
   <div style="position: absolute; top: 20px; left: 20px;">
-    <img src="{{ site.baseurl }}/assets/images/logo.png" style="height: 80px; width: auto;">
+    <img src="{{ site.baseurl }}/assets/images/logo.jpg" style="height: 80px; width: auto;">
   </div>
   <div style="position: absolute; top: 20px; right: 20px;">
-    <img src="{{ site.baseurl }}/assets/images/logo.png" style="height: 80px; width: auto;">
+    <img src="{{ site.baseurl }}/assets/images/logo.jpg" style="height: 80px; width: auto;">
   </div>
 
   <!-- Header Section -->
