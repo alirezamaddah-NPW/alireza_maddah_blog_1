@@ -87,15 +87,15 @@ title: "محصولات"
 
 .image-modal .modal-content {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: transparent;
   border-radius: 12px;
   padding: 0;
   box-shadow: 0 6px 24px rgba(0,0,0,.3);
   max-width: 90vw;
   max-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 #modal-img {
@@ -105,22 +105,28 @@ title: "محصولات"
   background: #fff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   object-fit: contain;
+  display: block;
 }
 
+/* Close button inside modal-content, top-right of image */
 .close-modal {
   position: absolute;
-  top: -16px;
-  left: -16px;
+  top: 8px;
+  right: 8px;
   background: #fff;
   color: #222;
   border: none;
   border-radius: 50%;
-  width: 40px; height: 40px;
+  width: 36px; height: 36px;
   font-size: 2rem;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   z-index: 2;
   transition: background .1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 .close-modal:hover,
 .close-modal:focus {
@@ -138,12 +144,15 @@ title: "محصولات"
   .product-grid {
     grid-template-columns: 1fr;
   }
-  .modal-content {
+  .image-modal .modal-content {
     max-width: 98vw;
     max-height: 80vh;
   }
+  #modal-img {
+    max-width: 96vw;
+    max-height: 65vh;
+  }
 }
-
 </style>
 
 <script>
@@ -173,7 +182,6 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.setAttribute('aria-hidden', 'false');
     lastFocusedElement = document.activeElement;
     closeBtn.focus();
-    // Prevent background scrolling
     document.body.style.overflow = 'hidden';
   }
 
@@ -182,9 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
     modalImg.src = '';
     modalImg.alt = '';
     modal.setAttribute('aria-hidden', 'true');
-    // Restore background scrolling
     document.body.style.overflow = '';
-    // Restore focus
     if (lastFocusedElement) lastFocusedElement.focus();
   }
 
@@ -205,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Close modal by button
   closeBtn.addEventListener('click', closeModal);
 
-  // Close modal by clicking outside
+  // Close modal by clicking outside image (on the dark overlay)
   modal.addEventListener('click', function (e) {
     if (e.target === modal) closeModal();
   });
@@ -217,5 +223,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
 </script>
